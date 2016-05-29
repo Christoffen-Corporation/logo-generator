@@ -2,12 +2,14 @@
 
 The Christoffen Logo Generator
 
+_**Requires the Cairo 2D Graphics Library and (possibly) its development files/headers as well. For more information on how to fill this dependency, please see [here](https://www.cairographics.org/download/).**_
+
 ## Installing to an APT box (Debian, Ubuntu, Mint, etc...)
 The logo generator is also now available on Debian-based machines. This means that the logo generator has been packaged up into a nice, pretty little archive for you to enjoy. Follow the directions below for installation. 
 
-```sh
-# If not already, install git:
-sudo apt-get install git
+```shell
+# If not already, install git and the Cairo development header files:
+sudo apt-get install git libcairo2-dev
 
 # Clone the repository containing sources and the package you'll be installing:
 git clone https://github.com/Christoffen-Corporation/logo-generator.git
@@ -20,7 +22,7 @@ sudo dpkg -i logo-generator-v2.0-test2_2-1_amd64.deb
 ```
 Now, to test the newly installed package, let's make it do something:
 
-```sh
+```shell
 # Starting from the logo-generator directory we left off in, go to your home directory:
 cd ~
 
@@ -43,8 +45,8 @@ Here, we'll explain what you need to do in order to do generation on non-APT sys
 
 The Christoffen logo-generator repo cloned in the above section is the same one we'll use here:
 
-```sh
-# If not already, install git:
+```shell
+# If not already, install git and any Cairo-based dependencies:
 (varies by systems, but YOU DEFINITELY MUST HAVE GIT INSTALLED)
 
 # Clone the repository containing the sources you'll need:
@@ -56,7 +58,7 @@ cd logo-generator
 
 Hold that thought. Open up your file manager application, and go to the folder containing the repo we just checked out via CLI. Then, minimize the file manager right then and save it for later as to be explained. Go back to the terminal.
 
-```sh
+```shell
 # We're going to build with the GNU Make tool. 
 sudo make
 
@@ -66,7 +68,7 @@ sudo make install
 
 Make has installed it to your system if you've made it thus far. In your CLI, go to any directory and type:
 
-```
+```shell
 logo-generator
 ```
 
