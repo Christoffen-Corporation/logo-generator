@@ -45,7 +45,7 @@ The Christoffen logo-generator repo cloned in the above section is the same one 
 
 ```sh
 # If not already, install git:
-sudo apt-get install git
+(varies by systems, but YOU DEFINITELY MUST HAVE GIT INSTALLED)
 
 # Clone the repository containing the sources you'll need:
 git clone https://github.com/Christoffen-Corporation/logo-generator.git
