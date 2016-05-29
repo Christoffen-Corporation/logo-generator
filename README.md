@@ -36,7 +36,7 @@ logo-generator
 # Run it one more time (explained below):
 logo-generator
 ```
-The reason we had to run it a second time was because of the fact that it generates the triangles as PNG files individually first, then uses those very same PNG files to compose the main logo (the blue "C") - think of each PNG as an individual piece of a jugsaw puzzle.
+The reason we had to run it a second time was because of the fact that it generates the triangles as PNG files individually first, then uses those very same PNG files to compose the main logo (the blue "C") - think of each PNG as an individual piece of a jigsaw puzzle.
 
 ## Everyone Else (the boring, less-quick-in-hasty-situations way)
 Here, we'll explain what you need to do in order to do generation on non-APT systems.
