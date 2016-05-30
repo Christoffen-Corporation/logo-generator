@@ -21,3 +21,4 @@ void outlined_triangle(int img_width, int img_height, double scaleX1, double sca
         cairo_surface_destroy (surface); 
 }
 
+
