@@ -1,3 +1,4 @@
+PRE-RELEASE BEWARE!!!
 # Christoffen Logo Generator
 
 The Christoffen Logo Generator

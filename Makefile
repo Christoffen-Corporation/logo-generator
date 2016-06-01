@@ -1,6 +1,6 @@
-logo-generator: main.o outlined_triangle.o colored_triangle.o join_triangles.o
-	gcc -o logo-generator main.o outlined_triangle.o colored_triangle.o join_triangles.o -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -lcairo 
-	rm -rf main.o outlined_triangle.o colored_triangle.o join_triangles.o
+logo-generator: main.o outlined_triangle.o colored_triangle.o join_triangles.o options.o
+	gcc -o logo-generator main.o outlined_triangle.o colored_triangle.o join_triangles.o options.o -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -lcairo 
+	rm -rf main.o outlined_triangle.o colored_triangle.o join_triangles.o options.o
 
 main.o: main.c include.h
 	gcc -c main.c -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -lcairo 
@@ -14,9 +14,17 @@ colored_triangle.o: colored_triangle.c include.h
 join_triangles.o: join_triangles.c include.h
 	gcc -c join_triangles.c -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -lcairo 
 
-install: logo-generator
-	install logo-generator /usr/bin
+options.o: options.c include.h 
+	gcc -c options.c -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -lcairo 
 
-clean: logo-generator
-	rm -rf logo-generator /usr/bin
+install: logo-generator
+	install logo-generator /usr/bin/
+
+install-manpage: logo-generator-man.1
+	mkdir /usr/local/share/man/logo-generator
+	cp logo-generator-man.1 /usr/local/share/man/logo-generator
+	mandb
+	man 1 logo-generator-man
+
+
 
