@@ -20,3 +20,11 @@ options.o: options.c include.h
 install: logo-generator
 	install logo-generator /usr/bin/
 
+install-manpage: logo-generator-man.1
+	mkdir /usr/local/share/man/logo-generator
+	cp logo-generator-man.1 /usr/local/share/man/logo-generator
+	mandb
+	man 1 logo-generator-man
+
+
+
