@@ -18,9 +18,5 @@ options.o: options.c include.h
 	gcc -c options.c -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -lcairo 
 
 install: logo-generator
-	mkdir -p /usr/bin/logo-generator
-	install logo-generator /usr/bin/logo-generator
-
-clean: logo-generator
-	rm -rf logo-generator /usr/bin/logo-generator
+	install logo-generator /usr/bin/
 
