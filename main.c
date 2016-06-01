@@ -32,12 +32,12 @@ static int parse_opt (int key, char *arg, struct argp_state *state) {
 int main (int argc, char **argv) {
  struct argp_option options[] =
  {
- { "colored-no-logo", 'C', 0, 0, "Generate all colored triangles, except for the logo"},
- { "colored-all", 'c', 0, 0, "Generate all colored triangles, and the logo"},
- { "outlined-no-logo", 'O', 0, 0, "Generate all outlined triangles, except for the logo"},
- { "outlined-all", 'o', 0, 0, "Generate all outlined triangles, and the logo"}, 
- { "frankenlogos", 'F', 0, 0, "Generate the Frankenlogos (don't ask; just do)"}, 
- { "all-images", 'a', 0, 0, "Generate all images: Outlines, Colors, and Logos."},
+ { "colored-no-logo", 'C', 0, 0, "Generate all colored triangles, except for the logo\n"},
+ { "colored-all", 'c', 0, 0, "Generate all colored triangles, and the logo\n"},
+ { "outlined-no-logo", 'O', 0, 0, "Generate all outlined triangles, except for the logo\n"},
+ { "outlined-all", 'o', 0, 0, "Generate all outlined triangles, and the logo\n"}, 
+ { "frankenlogos", 'F', 0, 0, "Generate the Frankenlogos (don't ask; just do)\n"}, 
+ { "all-images", 'a', 0, 0, "Generate all images: Outlines, Colors, and Logos.\n"},
  { 0 }
  };
  struct argp argp = { options, parse_opt, 0, 0 };
