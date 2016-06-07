@@ -23,13 +23,14 @@ static int parse_opt (int key, char *arg, struct argp_state *state) {
  case 'F':
  frankenlogos();
  break;
- case 'a': 
- all_imgs();
  }
  return 0;
 }
 
 int main (int argc, char **argv) {
+if (argc == 1) {
+all_imgs();
+} else {
  struct argp_option options[] =
  {
  { "colored-no-logo", 'C', 0, 0, "Generate all colored triangles, except for the logo\n"},
@@ -37,9 +38,9 @@ int main (int argc, char **argv) {
  { "outlined-no-logo", 'O', 0, 0, "Generate all outlined triangles, except for the logo\n"},
  { "outlined-all", 'o', 0, 0, "Generate all outlined triangles, and the logo\n"}, 
  { "frankenlogos", 'F', 0, 0, "Generate the Frankenlogos (don't ask; just do)\n"}, 
- { "all-images", 'a', 0, 0, "Generate all images: Outlines, Colors, and Logos.\n"},
  { 0 }
  };
  struct argp argp = { options, parse_opt, 0, 0 };
  return argp_parse (&argp, argc, argv, 0, 0, 0); 
+  }
 }
