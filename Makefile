@@ -20,6 +20,7 @@ options.o: options.c include.h
 
 install: logo-generator
 	install logo-generator /usr/bin/
+	rm logo-generator
 
 clean: logo-generator
 	rm -rf /usr/bin/logo-generator
