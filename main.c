@@ -3,31 +3,6 @@
 #include <gtk/gtk.h>
 #include "include.h"
 
-const char *argp_program_version = "The Christoffen Corporation Logo Generator v2.0.1";
-const char *argp_program_bug_address = "M. Gage Morgan <gage@christoffen.com>";
-static char doc[] = "Generates all of the logo, or just some.";
-
-static int parse_opt (int key, char *arg, struct argp_state *state) {
- switch (key) {
- case 'C': 
- colored_nologo(); 
- break;
- case 'c':
- colored_all();
- break;
- case 'O':
- outlined_nologo();
- break;
- case 'o':
- outlined_all();
- break;
- case 'F':
- frankenlogos();
- break;
- }
- return 0;
-}
-
 static void
 frankenlogo (GtkWidget *widget,
              gpointer   data)
@@ -105,7 +80,36 @@ activate (GtkApplication *app,
   g_signal_connect (button, "clicked", G_CALLBACK (outline_all), NULL);
   gtk_container_add (GTK_CONTAINER (button_box), button);
 
+  button = gtk_button_new_with_label ("All colors");
+  g_signal_connect (button, "clicked", G_CALLBACK (color_all), NULL);
+  gtk_container_add (GTK_CONTAINER (button_box), button);
+
   gtk_widget_show_all (window);
+}
+
+const char *argp_program_version = "The Christoffen Corporation Logo Generator v2.0.1";
+const char *argp_program_bug_address = "M. Gage Morgan <gage@christoffen.com>";
+static char doc[] = "Generates all of the logo, or just some.";
+
+static int parse_opt (int key, char *arg, struct argp_state *state) {
+ switch (key) {
+ case 'C': 
+ colored_nologo(); 
+ break;
+ case 'c':
+ colored_all();
+ break;
+ case 'O':
+ outlined_nologo();
+ break;
+ case 'o':
+ outlined_all();
+ break;
+ case 'F':
+ frankenlogos();
+ break;
+ }
+ return 0;
 }
 
 int
