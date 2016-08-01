@@ -2,7 +2,7 @@
 #include <argp.h>
 #include <gtk/gtk.h>
 #include "include.h"
-char name[100] = "The Christoffen Corporation Logo Generator v2.0.2";
+char name[100] = "The Christoffen Corporation Logo Generator v2.0.4";
 
 static void
 frankenlogo (GtkWidget *widget,
