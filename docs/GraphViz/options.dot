@@ -1,0 +1,10 @@
+ digraph G {
+ nodesep = "1";
+ "options.c" -> "all_imgs()";
+ "options.c" -> "outlined_nologo()";
+ "options.c" -> "outlined_all()";
+ "options.c" -> "colored_nologo()";
+ "options.c" -> "colored_all()";
+ "options.c" -> "frankenlogos()";
+ }
+

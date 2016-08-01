@@ -1,0 +1,6 @@
+ digraph G {
+ nodesep = "1";
+ "outlined_all()" -> "outlined_nologo()"; 
+ "outlined_all()" -> "join_triangles()";
+ }
+
